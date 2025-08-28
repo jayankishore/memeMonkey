@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>QR Code to Meme</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+	<style>
+		body { font-family: Arial, sans-serif; text-align: center; margin-top: 40px; }
+		#qr { margin: 20px auto; }
+		img { max-width: 300px; margin-top: 30px; }
+	</style>
+</head>
+<body>
+	<h2>Scan this QR code to see the new meme!</h2>
+	<canvas id="qr"></canvas>
+	<p>Or <a id="img-link" href="images/download.jpeg" target="_blank">click here to view the meme</a>.</p>
+	<script>
+		// The image URL (relative to this HTML file)
+		var imageUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/') + 'images/download.jpeg';
+		// Generate QR code
+		var qr = new QRious({
+			element: document.getElementById('qr'),
+			value: imageUrl,
+			size: 220
+		});
+		// Update link
+		document.getElementById('img-link').href = imageUrl;
+	</script>
+</body>
+</html>
