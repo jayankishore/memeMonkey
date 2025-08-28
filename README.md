@@ -1,2 +1,2 @@
-# memeMonkey
-to fool your friends
+# memePage
+to meme people
